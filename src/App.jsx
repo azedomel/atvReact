@@ -2,6 +2,7 @@
 import { Menu } from './components/menu'
 import  Contact from './Contact'
 
+
 export default function App() {
 
   return (
