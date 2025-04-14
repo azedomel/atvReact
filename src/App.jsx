@@ -1,69 +1,96 @@
-// import style from './App.module.css'
-import { Menu } from './components/menu'
-import  Contact from './Contact'
-// import rj from './assets/images/rj.png'
-import { cards } from './assets/mock/card'
-import style from './App.module.css'
-import { useState } from 'react'
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Menu } from './components/menu';
+import Contact from './Contact';
+import style from './App.module.css';
+import menuStyle from './components/menu.module.css';
+import { cards } from './assets/mock/card';
+import capaSuperiorImage from './assets/images/capaSuperior2.jpg';
+import profileImage from './assets/images/capaSuperior.jpg';
+import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 
+function SobreMim() {
+  return (
+    <section id='sobre-mim' className={style.sobreMimSection}>
+      <div className={style.sobreMimBackgroundContainer}>
+        <img src={capaSuperiorImage} alt="Imagem de fundo Sobre Mim" className={style.sobreMimBackgroundImage} />
+        <h2 className={style.sobreMimTitle}>Sobre mim</h2>
+      </div>
+
+      <div className={style.profileImageContainer}>
+        <img src={profileImage} alt="Sua foto de perfil" className={style.profileImage} />
+      </div>
+      <p>
+      Me chamo Kevilin, tenho 18 anos e sou movida por uma curiosidade constante. Sou apaixonada pelo universo da programação e atualmente curso Análise e Desenvolvimento de Sistemas no SENAI. Além dos códigos, também me encanto pelo mundo da fotografia — onde encontro uma forma de expressar minha criatividade — e pelos gatos, que conquistaram meu coração com seus jeitinhos únicos. Estou sempre em busca de aprender algo novo e transformar ideias em realidade.
+      </p>
+
+    </section>
+  );
+}
+
+function Portfolio() {
+  return (
+    <section id='portfolio' className={style.PortfolioSection}>
+      <h2>Portfólio</h2>
+      <p>Alguns links de projetos realizados no Senai:</p>
+      <div className={style.cardsGrid}>
+        {cards.map((item, index) => (
+          <div key={index}>
+            <a href={item.titleLink} target="_blank" rel="noopener noreferrer">
+              <h5>{item.text}</h5>
+            </a>
+            <img src={item.img} alt={item.text} width={200} height={"auto"} />
+            {item.githubLink && (
+              <a href={item.githubLink} target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <a href="https://linkedin.com/in/kevilin-marcondes" target="_blank" rel="noopener noreferrer">
+        <FaLinkedin style={{ marginRight: '5px', verticalAlign: 'middle' }} /> LinkedIn
+      </a>
+      <a href="https://www.instagram.com/kkkkev._/" target="_blank" rel="noopener noreferrer">
+        <FaInstagram style={{ marginRight: '5px', verticalAlign: 'middle' }} /> Instagram
+      </a>
+      <a href="https://github.com/azedomel" target="_blank" rel="noopener noreferrer">
+        <FaGithub style={{ marginRight: '5px', verticalAlign: 'middle' }} /> GitHub
+      </a>
+    </footer>
+  );
+}
+
+function PaginaPrincipal() {
+  return (
+    <main>
+      <SobreMim />
+      <Portfolio />
+      <Footer />
+    </main>
+  );
+}
 
 export default function App() {
-  const defaultPhoneNumber = '5541999999999'
-
-  const handleChange = (e) =>{
-    const {name,value} = e.target;
-    setFormData({...formData, [name]: value})
-  }
-  
-  const handleZap = () =>{
-    const {name, email, message} = formData;
-
-    const urlZap = `https://api.whatsapp.com/send?phone=${defaultPhoneNumber}&text=
-    Nome:%20${name}%0D%0A
-    Email:%20${email}%0D%0A
-    Mensagem:%20${message}%0D%0A`
-
-    window.open(urlZap, "_blank")
-  }
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
   return (
     <>
+    <div>
+      <Menu
+        option01={<a href="/" className={menuStyle.navLink}>Sobre Mim</a>}
+        option02={<a href="#portfolio" className={menuStyle.navLink}>Portfólio</a>}
+        option03={<Link to="/contact" className={menuStyle.navLink}>Contato</Link>}
+      />
 
-     <Menu option01='sessão 1' option02='sessão 2' option03='contato' ></Menu>
-
-     <main>
-      <section id='s1' className={style.s1}>
-      <h2>sessão 1</h2>
-      {/* <img src={rj} alt="rio" /> */}
-      {cards.map((item, index) => {
-        return(
-          <div key={index}>
-            <h5>{item.text}</h5>
-            <img src={item.img} alt={item.text} width={200} height={"auto"}/>
-          </div>
-        )
-})}
-      </section>
-
-      <section id='s2'>
-      <h2>sessão 2</h2>
-      <br/>
-      <input placeholder="Insira seu nome"  type="text" id='name' name='name' value={formData.name} onChange={handleChange} required/>
-      <input placeholder="Insira seu email" type="text" id='email' name='email' value={formData.email} onChange={handleChange} required/>
-      <textarea placeholder="Insira mensagem" type="text" id='message' name='message' value={formData.message}  onChange={handleChange} required></textarea>
-     <button onClick={handleZap}>Enviar Mensagem</button>
-      </section>
-
-      <section id='s3'>
-      <h2>sessão 3</h2>
-      </section>
-     </main>
+      <Routes>
+        <Route path="/" element={<PaginaPrincipal />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
     </>
-  )
+  );
 }

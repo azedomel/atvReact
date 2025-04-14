@@ -1,20 +1,24 @@
-import rj from '../images/rj.png'
+import iconGit from '../images/icongit.png';
 
 export const cards = [
-    {
-        text: "rioDeJaneiro", img: rj
-    },
-    {
-        text: "rioDeJaneiro1", img: rj
-    },
-    {
-        text: "rioDeJaneiro2", img: rj
-    },
-    {
-        text: "rioDeJaneiro3", img: rj
-    },
-    {
-        text: "rioDeJaneiro4", img: rj
-    },
-
+  {
+    text: "Landing Page React",
+    img: iconGit,
+    titleLink: "https://github.com/azedomel/atvReact",
+  },
+  {
+    text: "Guess game in C",
+    img: iconGit,
+    titleLink: "https://github.com/azedomel/Guess-game",
+  },
+  {
+    text: "Showroom Market",
+    img: iconGit,
+    titleLink: "https://github.com/azedomel/Market-PS5-games",
+  },
+  {
+    text: "Pokedex in C",
+    img: iconGit,
+    titleLink: "https://github.com/azedomel/Pokedex-in-C",
+  },
 ];

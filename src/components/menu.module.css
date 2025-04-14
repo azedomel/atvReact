@@ -1,11 +1,15 @@
-.navbar{
-    width: 100%;
-    height: 30px;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2vw;
-    background-color: var(--bg);
-    color: var(--text);
+.navLink {
+    margin-top: 10px;
+    padding: 10px;
+    color: #71cf76 !important;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: "Henny Penny", system-ui;
+}
+
+.navLink:hover {
+    color: #1ab024 !important; /* Verde mais escuro no hover */
+    transform: translateY(-2px);
+    background-color: rgba(46, 125, 50, 0.1);
+    border-radius: 4px;
 }
