@@ -5,8 +5,8 @@ import Contact from './Contact';
 import style from './App.module.css';
 import menuStyle from './components/menu.module.css';
 import { cards } from './assets/mock/card';
-import capaSuperiorImage from './assets/images/capaSuperior2.jpg';
-import profileImage from './assets/images/capaSuperior.jpg';
+import capaSuperiorImage from './assets/images/capasuperior2.jpg';
+import profileImage from './assets/images/capasuperior.jpg';
 import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 
 function SobreMim() {

@@ -188,7 +188,12 @@ footer a:hover {
 
 }
 
-@media (width > 750px){
+@media (width > 1150px){
+  .sobreMimBackgroundImage {
+    width: 100%;
+    height: auto;
+    margin-top: -300px;
+  }
     .profileImageContainer {
         position: relative;
         top: -150px;
@@ -200,4 +205,12 @@ footer a:hover {
         border: 2px solid rgb(75, 198, 99);
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
       }
+}
+
+@media (width > 1500px){
+  .sobreMimBackgroundImage {
+    width: 100%;
+    height: auto;
+    margin-top: -500px;
+  }
 }
