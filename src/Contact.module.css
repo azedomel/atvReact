@@ -74,6 +74,7 @@
 
 .mapSection {
   background-color: rgb(86, 55, 70);
+  overflow-x: hidden;
 }
 
 .mapSection h2 {

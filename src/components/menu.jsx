@@ -13,6 +13,7 @@ export const Menu = (props) => {
             {props.option01}
             {props.option02}
             {props.option03}
+            {props.option04}
           </div>
         </div>
       </div>
