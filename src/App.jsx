@@ -2,7 +2,8 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Menu } from './components/menu';
 import Contact from './Contact';
-import Calcs from './Calcs';
+// import Calcs from './Calcs';
+import Req from './Req';
 import style from './App.module.css';
 import menuStyle from './components/menu.module.css';
 import { cards } from './assets/mock/card';
@@ -85,12 +86,13 @@ export default function App() {
         option01={<a href="/" className={menuStyle.navLink}>Sobre Mim</a>}
         option02={<a href="#portfolio" className={menuStyle.navLink}>Portfólio</a>}
         option03={<Link to="/contact" className={menuStyle.navLink}>Contato</Link>}
-        option04={<Link to="/calcs" className={menuStyle.navLink}>Calculadora</Link>}
+        option04={<Link to="/req" className={menuStyle.navLink}>API Rick and Morty</Link>}
       />
 
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path='/req' element={<Req/>}/>
       </Routes>
     </div>
     </>

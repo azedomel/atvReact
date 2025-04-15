@@ -15,7 +15,7 @@
 //     const mult = () => setRespMult(parseFloat(n1) * parseFloat(n2))
 //     const dividir = () => setRespDiv(parseFloat(n1) / parseFloat(n2))
 
-//     const handleAll = (a,b) => {
+//     const handleAll = (n1,n2) => {
 //         setRespSoma(parseFloat(n1) + parseFloat(n2))
 //         setRespSub(parseFloat(n1) - parseFloat(n2))
 //         setRespMult(parseFloat(n1) * parseFloat(n2))

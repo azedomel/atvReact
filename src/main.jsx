@@ -10,7 +10,8 @@ import {
 import './index.css'
 import App from './App.jsx'
 import Contact from './Contact.jsx'
-import Calcs from './Calcs.jsx';
+import Req from './Req.jsx';
+
 
 import { Analytics } from "@vercel/analytics/react"
 
@@ -30,10 +31,15 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <Contact />
   },
+  // {
+  //   path: "/calcs",
+  //   element: <Calcs/>,
+  // },
   {
-    path: "/calcs",
-    element: <Calcs/>,
+    path: "/req",
+    element: <Req/>,
   }
+
 ]);
 
 createRoot(document.getElementById('root')).render(
