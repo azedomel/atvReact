@@ -1,0 +1,36 @@
+.wrapPage{
+    padding: 1vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.wrapsCard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.titleName{
+    width: 100%;
+    text-align: center;
+}
+.modalPop{
+    position: fixed;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -35%);
+    background-color: rgba(0, 0, 0, 0.594);
+    color: aliceblue;
+    padding: 10rem;
+    width: 90vw;
+    border-radius: 10px;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    z-index: 1;
+}

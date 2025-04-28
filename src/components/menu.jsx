@@ -14,6 +14,7 @@ export const Menu = (props) => {
             {props.option02}
             {props.option03}
             {props.option04}
+            {props.option05}
           </div>
         </div>
       </div>
